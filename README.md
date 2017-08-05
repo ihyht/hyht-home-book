@@ -4,3 +4,11 @@
 
 
 
+项目代码地址：
+
+​	http://47.92.90.217:7990/projects/HYHT/repos/hyht-home-web/browse
+
+​	http://47.92.90.217:7990/projects/HYHT/repos/hyht-home/browse
+
+账号是名字，密码是123456
+
