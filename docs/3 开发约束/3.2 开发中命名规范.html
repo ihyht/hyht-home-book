@@ -362,19 +362,27 @@ AccountMapper
 <p>GET&#xFF1A;&#x67E5;&#x8BE2;&#xFF08;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x53D6;&#x51FA;&#x8D44;&#x6E90;&#x4E00;&#x9879;&#x6216;&#x591A;&#x9879;&#xFF09;</p>
 <pre><code>GET /accout/plist   //&#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x5206;&#x9875;&#x5217;&#x8868;
 
-GET /account/id    //&#x6839;&#x636E;id&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;
+GET /account/{id}    //&#x6839;&#x636E;id&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;
+&#x53C2;&#x6570;&#xFF1A;@PathVariable String id
 
 GET /account/list   //&#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;
-</code></pre><p>POST&#xFF1A;&#x521B;&#x5EFA;&#x5355;&#x4E2A;&#x65B0;&#x8D44;&#x6E90;&#x3002; POST&#x4E00;&#x822C;&#x5411;&#x201C;&#x8D44;&#x6E90;&#x96C6;&#x5408;&#x201D;&#x578B;uri&#x53D1;&#x8D77;</p>
-<pre><code class="lang-html">POST /account  //&#x65B0;&#x589E;&#x8D26;&#x6237;
+</code></pre><p>PUT&#xFF1A;&#x521B;&#x5EFA;&#x5355;&#x4E2A;&#x65B0;&#x8D44;&#x6E90;&#x3002; </p>
+<pre><code class="lang-html">PUT /account  //&#x65B0;&#x589E;&#x8D26;&#x6237;
+&#x53C2;&#x6570;&#xFF1A;@RequestBody Permission Permission
 </code></pre>
-<p>PUT&#xFF1A;&#x66F4;&#x65B0;&#x5355;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x5168;&#x91CF;&#xFF09;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
-<pre><code class="lang-html">PUT /accunt/id //&#x4FEE;&#x6539;id&#x7684;&#x8D26;&#x6237;&#x4FE1;&#x606F;
+<p>POST&#xFF1A;&#x66F4;&#x65B0;&#x5355;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x5168;&#x91CF;&#xFF09;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<pre><code class="lang-html">POST /accunt   //&#x4FEE;&#x6539;&#x8D26;&#x6237;
+&#x53C2;&#x6570;&#xFF1A;@RequestBody Permission permission
+</code></pre>
+<p>POST&#xFF1A;&#x66F4;&#x65B0;&#x5355;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF09;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<pre><code class="lang-html">POST /accunt   //&#x4FEE;&#x6539;&#x8D26;&#x6237;
+&#x628A;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x90E8;&#x5206;&#x5B57;&#x6BB5;&#x5199;&#x8FDB;&#x65B0;&#x5EFA;&#x7684;Vo&#x5BF9;&#x8C61;
+&#x53C2;&#x6570;&#xFF1A;@RequestBody PermissionVo permissionVo
 </code></pre>
 <p>DELETE&#xFF1A;&#x5220;&#x9664;</p>
-<pre><code>DELETE /rest/account/id
-
-DELETE /rest/account/id1;id2,id3
+<pre><code>DELETE /rest/account/{id}
+&#x53C2;&#x6570;&#xFF1A; @PathVariable String id
+id&#x6709;&#x591A;&#x4E2A;&#x7684;&#x65F6;&#x5019;&#x7528;&#x82F1;&#x6587;&#x9017;&#x53F7;&#x9694;&#x5F00;
 
 DELETE /rest/account/all
 </code></pre>
@@ -420,7 +428,7 @@ DELETE /rest/account/all
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 开发中命名规范","level":"1.4.2","depth":2,"next":{"title":"3.3 开发中物理模型及sql变更规范","level":"1.4.3","depth":2,"path":"3 开发约束/3.3 开发中物理模型及变更规范.md","ref":"3 开发约束/3.3 开发中物理模型及变更规范.md","articles":[]},"previous":{"title":"3.1 分支开发模式及代码合并流程","level":"1.4.1","depth":2,"path":"3 开发约束/3.1 分支开发模式及代码合并流程.md","ref":"3 开发约束/3.1 分支开发模式及代码合并流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3 开发约束/3.2 开发中命名规范.md","mtime":"2017-08-05T01:12:05.139Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-07T09:39:38.068Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 开发中命名规范","level":"1.4.2","depth":2,"next":{"title":"3.3 开发中物理模型及sql变更规范","level":"1.4.3","depth":2,"path":"3 开发约束/3.3 开发中物理模型及变更规范.md","ref":"3 开发约束/3.3 开发中物理模型及变更规范.md","articles":[]},"previous":{"title":"3.1 分支开发模式及代码合并流程","level":"1.4.1","depth":2,"path":"3 开发约束/3.1 分支开发模式及代码合并流程.md","ref":"3 开发约束/3.1 分支开发模式及代码合并流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3 开发约束/3.2 开发中命名规范.md","mtime":"2017-08-28T07:58:56.035Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-28T08:00:02.276Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -428,10 +436,6 @@ DELETE /rest/account/all
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
